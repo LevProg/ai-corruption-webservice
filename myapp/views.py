@@ -8,6 +8,7 @@ import pickle
 from docx.enum.text import WD_COLOR_INDEX
 from catboost import CatBoostClassifier, Pool
 import docx
+import os
 
 best_fac = ['3_9', '3_5', '4_3']
 models = pickle.load(open('myapp/static/models.pickle', 'rb'))
@@ -51,7 +52,7 @@ def my_view(request):
     else:
         form = DocumentForm()  # An empty, unbound form
 
-    current_user=request.user
+    current_user = request.user
     # Load documents for the list psage
     documents = Document.objects.filter(user__id=current_user.id)
     # Render list page with the documents and the form
@@ -60,7 +61,9 @@ def my_view(request):
 
 def delete(request, id):
     try:
+        current_user = request.user
         doc = Document.objects.get(id=id,user__id=current_user.id)
+        os.remove('C:/Users/Aser/start/media'+'/'+doc.docfile.name)
         doc.delete()
         return HttpResponseRedirect("/")
     except Document.DoesNotExist:
