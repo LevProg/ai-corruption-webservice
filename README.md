@@ -44,6 +44,10 @@ First you need to change the current directory to the project directory
     cd project_path
 ```
 Next, we activate the virtual environment
-```cm
+```cmd
     env\Scripts\activate.bat
+```
+And at the end we start the server
+```cmd
+    python manage.py runserver
 ```
