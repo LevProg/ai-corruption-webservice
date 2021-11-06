@@ -14,9 +14,8 @@ User sent the file => The Server processed it => If the format (.docx) is correc
 
 There are only two views in the project: 
 
-1)Account login view
-
-2)Main page with a list of all available files + the ability to upload new ones.
++ Account login view
++ Main page with a list of all available files + the ability to upload new ones.
 
 All screenshots of the implementation are in the corresponding project folder
 
