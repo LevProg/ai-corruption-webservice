@@ -40,7 +40,7 @@ An ensemble of more than 10 neural networks was used as an artificial intelligen
 Model training script: https://github.com/LevProg/ai-corruption/blob/master/research.ipynb
 ## Server start
 First you need to change the current directory to the project directory
-```cmd
+```cm
     cd project_path
 ```
 Next, we activate the virtual environment
