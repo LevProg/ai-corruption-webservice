@@ -19,8 +19,7 @@ There are only two views in the project:
 
 ![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/files.png?raw=true)
 
-Description of the web application6
-
+Description of the web application:
 
 User sent the file => The Server processed it => If the format (.docx) is correct, the Server predicts the presence of corruptogenic factors and highlights them in the text => Server saves the modified file => User can download the modified file to his device and delete the file
 
@@ -28,4 +27,7 @@ SQLite was used as a DBMS.
 The project has a standard Django user database and a database of uploaded files, database link: one-to-many.
 Each user can view and delete only files uploaded by him.
 
-All files are stored on the server:
+All files are stored on the server as /media/<user>/<filename>
+ 
+Example:
+![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/media_files.png?raw=true)
