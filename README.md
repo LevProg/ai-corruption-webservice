@@ -41,5 +41,9 @@ Model training script: https://github.com/LevProg/ai-corruption/blob/master/rese
 ## Server start
 First you need to change the current directory to the project directory
 ```cmd
-    <?php phpinfo();?>
+    cd project_path
+```
+Next, we activate the virtual environment
+```cm
+    env\Scripts\activate.bat
 ```
