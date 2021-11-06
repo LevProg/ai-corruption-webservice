@@ -2,26 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Minimal Django File Upload Example</title>
+        <title>Main</title>
     </head>
 
     <body>
-        <!-- List of uploaded documents -->
-            {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
             <p>User: {{ user.get_username }}</p>
             <p><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></p>
             {% if documents %}
+            <!-- List all uploaded files of authenticated user -->
             All documents in the database:
             <ul>
                 {% for document in documents %}
-                <li><a href="{{ document.docfile.url }}">{{ document.docfile.name}}</a><a href="delete/{{document.id}}">    Удалить</a></li>
+                <li><a href="{{ document.docfile.url }}">{{ document.docfile.name}}</a><a href="delete/{{document.id}}" style="margin-left: 50px;">delete</a></li>
                 {% endfor %}
             </ul>
             {% else %}
             <p>No documents.</p>
             {% endif %}
 
-            <!-- Upload form. Note enctype attribute! -->
+            <!-- Upload form -->
             <form action="{% url 'my-view' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ message }}
@@ -36,9 +36,8 @@
 
                 <p><input type="submit" value="Upload" /></p>
             </form>
-            {% else %}
+        {% else %}
             <p><a href="{% url 'login'%}?next={{request.path}}">Login</a></p>
-            {% endif %}
-
+        {% endif %}
     </body>
 </html>

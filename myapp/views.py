@@ -10,9 +10,11 @@ from catboost import CatBoostClassifier, Pool
 import docx
 import os
 
+
 best_fac = ['3_9', '3_5', '4_3']
 models = pickle.load(open('myapp/static/models.pickle', 'rb'))
 TRESHOLD = 0.75
+project_path=os.getcwd()
 
 @login_required
 def my_view(request):
@@ -21,14 +23,13 @@ def my_view(request):
     if request.method == 'POST':
         current_user=request.user
         form = DocumentForm(request.POST, request.FILES)
-        #current_user.DocumentForm_set.add(form, bulk =False)
         if form.is_valid():
             print(request.FILES['docfile'])
             newdoc = Document(docfile=request.FILES['docfile'], user=current_user)
             newdoc.save()
             print(newdoc.docfile.url)
             if 'docx' in newdoc.docfile.url:
-                doc = docx.Document('C:/Users/Aser/start/'+newdoc.docfile.url)
+                doc = docx.Document(project_path+'/'+newdoc.docfile.url)
                 cnt=0
                 for paragraph in doc.paragraphs:#TODO: Simultaneous prediction for each paragraph in parallel, to improve processing time
                     indicator = False
@@ -43,7 +44,7 @@ def my_view(request):
                         for run in paragraph.runs:
                             run.font.highlight_color = WD_COLOR_INDEX.YELLOW#Highlight the paragraph with the found corruption factor
                 allCntOfCorruption=cnt
-                doc.save('C:/Users/Aser/start/'+newdoc.docfile.url)
+                doc.save(project_path+'/'+newdoc.docfile.url)
             # Redirect to the document list after POST
             return redirect('my-view')
         else:
@@ -63,7 +64,7 @@ def delete(request, id):
     try:
         current_user = request.user
         doc = Document.objects.get(id=id,user__id=current_user.id)
-        os.remove('C:/Users/Aser/start/media'+'/'+doc.docfile.name)
+        os.remove(project_path+'/media/'+doc.docfile.name)
         doc.delete()
         return HttpResponseRedirect("/")
     except Document.DoesNotExist:

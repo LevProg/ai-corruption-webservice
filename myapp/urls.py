@@ -1,5 +1,5 @@
 from django.urls import include
-from django.urls import path
+from django.urls import path,re_path
 from .views import my_view, delete
 
 urlpatterns = [

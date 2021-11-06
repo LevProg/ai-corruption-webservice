@@ -1,15 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\env\\Lib",
-    "\\env\\Lib\\site-packages",
-    "\\env\\Scripts",
     "\\media",
     "\\myapp",
     "\\myapp\\templates",
     "\\myapp\\templates\\registration",
     "\\myproject"
   ],
-  "SelectedNode": "\\env",
+  "SelectedNode": "\\myapp\\templates\\registration\\login.html",
   "PreviewInSolutionExplorer": false
 }
