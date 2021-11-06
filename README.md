@@ -2,7 +2,7 @@
 
 ## Solution Description
 ### Task
-This repository is analogous to "https://github.com/LevProg/ai-corruption" except for the solution presentation. If in the first repository the solution is presented as a Desktop application, then in this one the Web application.
+The task of this repository is similar to my [other](https://github.com/LevProg/ai-corruption). Only in the first repository the solution is presented as a desktop application, and in this one it is a web application.
 
 The basic concept is the same: analyze the file for the presence of corruption factors and highlight the paragraph in which there is a high probability of the presence of a corruption factor.
 
