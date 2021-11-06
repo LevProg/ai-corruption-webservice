@@ -27,7 +27,7 @@ SQLite was used as a DBMS.
 The project has a standard Django user database and a database of uploaded files, database link: one-to-many.
 Each user can view and delete only files uploaded by him.
 
-All files are stored on the server as /media/<user>/<filename>
+All files are stored on the server as /media/USER/FILENAME
  
 Example:
 ![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/media_files.png?raw=true)
