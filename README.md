@@ -6,10 +6,8 @@ This repository is analogous to "https://github.com/LevProg/ai-corruption" excep
 
 The basic concept is the same: analyze the file for the presence of corruption factors and highlight the paragraph in which there is a high probability of the presence of a corruption factor.
 
-To write it, was used framework Django. The architecture was built using the standard Django MVC pattern.
-
 ### Solution implementation
-To write it, was used framework Django. The architecture was built using the standard Django MVC pattern.
+To write it, was used framework Django. The architecture was built using the standard Django MVT pattern.
 
 There are only two views in the project: 
 
@@ -20,6 +18,11 @@ There are only two views in the project:
 2)Main page with a list of all available files + the ability to upload new ones.
 
 ![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/files.png?raw=true)
+
+Description of the web application6
+
+
+User sent the file => The Server processed it => If the format (.docx) is correct, the Server predicts the presence of corruptogenic factors and highlights them in the text => Server saves the modified file => User can download the modified file to his device and delete the file
 
 SQLite was used as a DBMS.
 The project has a standard Django user database and a database of uploaded files, database link: one-to-many.
