@@ -31,9 +31,15 @@ Each user can view and delete only files uploaded by him.
 All files are stored on the server as /media/USER/FILENAME
  
 Example:
+
 ![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/media_files.png?raw=true)
 
 ## Model
 An ensemble of more than 10 neural networks was used as an artificial intelligence model, each for recognizing its own corruption-generating factor.
 
 Model training script: https://github.com/LevProg/ai-corruption/blob/master/research.ipynb
+## Server start
+First you need to change the current directory to the project directory
+```cmd
+    <?php phpinfo();?>
+```
