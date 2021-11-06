@@ -23,7 +23,8 @@ Description of the web application:
 
 User sent the file => The Server processed it => If the format (.docx) is correct, the Server predicts the presence of corruptogenic factors and highlights them in the text => Server saves the modified file => User can download the modified file to his device and delete the file
 
-SQLite was used as a DBMS.
+### More about database
+SQLite was used as a DBMS in the project.
 The project has a standard Django user database and a database of uploaded files, database link: one-to-many.
 Each user can view and delete only files uploaded by him.
 
