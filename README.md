@@ -9,19 +9,18 @@ The basic concept is the same: analyze the file for the presence of corruption f
 ### Solution implementation
 To write it, was used framework Django. The architecture was built using the standard Django MVT pattern.
 
+
+User sent the file => The Server processed it => If the format (.docx) is correct, the Server predicts the presence of corruptogenic factors and highlights them in the text => Server saves the modified file => User can download the modified file to his device and delete the file
+
 There are only two views in the project: 
 
 1)Account login view
 
-![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/login.png?raw=true)
-
 2)Main page with a list of all available files + the ability to upload new ones.
 
-![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/files.png?raw=true)
+All screenshots of the implementation are in the corresponding project folder
 
 Description of the web application:
-
-User sent the file => The Server processed it => If the format (.docx) is correct, the Server predicts the presence of corruptogenic factors and highlights them in the text => Server saves the modified file => User can download the modified file to his device and delete the file
 
 ### More about database
 SQLite was used as a DBMS in the project.
