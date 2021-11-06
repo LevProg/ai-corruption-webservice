@@ -13,8 +13,11 @@ To write it, was used framework Django. The architecture was built using the sta
 
 There are only two views in the project: 
 
-1)login to the account
+1)Account login view
+
 ![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/login.png?raw=true)
+
+2)Main page with a list of all available files + the ability to upload new ones.
 
 ![](https://github.com/LevProg/ai-corruption-webservice/blob/master/Scrins/files.png?raw=true)
 
